@@ -1,5 +1,5 @@
-import { fakeData as notes } from './assests/fakeData';
-import { NoteCard } from './components/NoteCard';
+import { fakeData as notes } from '../assets/fakeData.js';
+import NoteCard from '../components/NoteCard';
 const NotesPage = () => {
     return (
         <div>
