@@ -8,8 +8,18 @@ export const setNewOffset = (card, mouseMoveDir = { x: 0, y: 0 }) => {
   };
 };
 export const autoGrow = (textAreaRef) => {
-    const { current } = textAreaRef;
-    current.style.height = "auto";
-    current.style.height = current.scrollHeight + "px";
+  const { current } = textAreaRef;
+  current.style.height = "auto";
+  current.style.height = current.scrollHeight + "px";
 };
 // export default setNewOffset;
+
+export const setZIndex = (selectedCard) => {
+  selectedCard.style.zIndex = 999;
+
+  Array.from(document.getElementsByClassName("card")).forEach((card) => {
+    if (card !== selectedCard) {
+      card.style.zIndex = selectedCard.style.zIndex - 1;
+    }
+  });
+};

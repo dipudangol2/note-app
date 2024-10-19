@@ -1,4 +1,4 @@
-import { setNewOffset , autoGrow} from "../utils";
+import { setNewOffset, autoGrow, setZIndex } from "../utils";
 import Trash from "../icons/Trash";
 import { useRef, useEffect, useState } from "react";
 const NoteCard = ({ note }) => {
@@ -17,6 +17,8 @@ const NoteCard = ({ note }) => {
 
         document.addEventListener("mousemove", mouseMove);
         document.addEventListener("mouseup", mouseUp);
+
+        setZIndex(cardRef.current);
     };
 
     const mouseMove = (e) => {
@@ -64,6 +66,11 @@ const NoteCard = ({ note }) => {
             <div className="card-body">
                 <textarea
                     ref={textAreaRef}
+                    onFocus={
+                        () => {
+                            setZIndex(cardRef.current);
+                        }
+                    }
                     onInput={() => {
                         autoGrow(textAreaRef);
                     }}
