@@ -27,7 +27,7 @@ export const setZIndex = (selectedCard) => {
 export const bodyParser = (value) => {
   try {
     return JSON.parse(value);
-  } catch(e) {
+  } catch (e) {
     return value;
   }
 };

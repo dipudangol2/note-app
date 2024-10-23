@@ -15,13 +15,14 @@ const NotesPage = () => {
 
         setNotes(response.documents);
     }
+    console.log(notes)
 
     return (
         <div>
             {
                 notes.map((note) => (
-                    <NoteCard note={note} key={note.$id} />
-                ))
+            <NoteCard note={note} key={note.$id} setNotes={setNotes} />
+            ))
             }
 
         </div>
