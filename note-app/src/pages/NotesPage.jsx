@@ -1,5 +1,6 @@
 // import { fakeData as notes } from '../assets/fakeData.js';
 import { useContext } from "react";
+import Controls from "../components/Controls"
 import NoteCard from '../components/NoteCard';
 import { NoteContext } from '../context/NoteContext';
 const NotesPage = () => {
@@ -13,6 +14,7 @@ const NotesPage = () => {
                 ))
             }
 
+            <Controls />
         </div>
     )
 }

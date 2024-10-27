@@ -45,6 +45,7 @@ const NoteCard = ({ note }) => {
 
     useEffect(() => {
         autoGrow(textAreaRef);
+        setZIndex(cardRef.current);
     }, []);
     const mouseUp = () => {
         document.removeEventListener("mousemove", mouseMove);
